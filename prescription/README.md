@@ -69,7 +69,9 @@ idea: that is a receptionist who has additionally this privilege
 
 =======
 
-## 2.2 example: add privileges to existing roles
+## 2.2 example: add privileges to existing roles - please note!
+
+!! Please note: after stop/restarting the server, those changes (of the own created privileges, and of the built-in privilege - patient-summary - are reset/withdrawn/not there any more, and must be set, again. 
 
 in: Admin view - Users - manage roles
 
