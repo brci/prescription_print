@@ -61,11 +61,11 @@
 	
 	<!-- Required Privileges -->
 	<privilege>
-		<name>Task: Prescription_view_privilege</name>
+		<name>Task: Prescription View</name>
 		<description>Allows user to view prescriptions</description>
 	</privilege>
 	<privilege>
-		<name>Task: Prescription_modify_privilege</name>
+		<name>Task: Prescription Modify</name>
 		<description>Allows user to modify prescriptions</description>
 	</privilege>
 

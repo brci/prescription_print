@@ -14,6 +14,14 @@ import org.springframework.stereotype.Component;
 /**
  * Contains module's config.
  */
+
+/*
+ * seems not to work - say: don't know where to set this privilege (in admin view)
+ * that is why, not used
+ * instead: config.xml
+ * 
+ */
+
 @Component("prescription.PrescriptionConfig")
 public class PrescriptionConfig {
 	

@@ -27,16 +27,14 @@ public class PrescriptionsFragmentController {
 		model.addAttribute("prescriptionsgrouped", service.getAllPrescriptionsGrouped(patient));
 		
 		model.addAttribute("hasPrescriptionViewPrivilege",
-		    Context.getAuthenticatedUser().hasPrivilege("Task: Prescription_view_privilege"));
+		    Context.getAuthenticatedUser().hasPrivilege("Task: Prescription View"));
 		model.addAttribute("hasPrescriptionModifyPrivilege",
-		    Context.getAuthenticatedUser().hasPrivilege("Task: Prescription_modify_privilege"));
+		    Context.getAuthenticatedUser().hasPrivilege("Task: Prescription Modify"));
 		
 		model.addAttribute("currenturl", request.getContextPath());
 		
-		System.out.println("Privilege view: "
-		        + Context.getAuthenticatedUser().hasPrivilege("Task: Prescription_view_privilege"));
-		System.out.println("Privilege modify: "
-		        + Context.getAuthenticatedUser().hasPrivilege("Task: Prescription_modify_privilege"));
+		System.out.println("Privilege view: " + Context.getAuthenticatedUser().hasPrivilege("Task: Prescription View"));
+		System.out.println("Privilege modify: " + Context.getAuthenticatedUser().hasPrivilege("Task: Prescription Modify"));
 		
 	}
 	
