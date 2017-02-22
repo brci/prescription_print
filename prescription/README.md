@@ -25,7 +25,7 @@ a/ (rename to .jar) unzip the omod-file (e.g.: prescription-1.0.0.omod)
 
 b/ change the files
 
-c/ produce the .omod (jar): 
+c/ again, produce the .omod (jar): 
 
 > jar -cvfM prescription-1.0.0.omod -C prescription-1.0.0.omod_FILES/ . 
 
@@ -53,80 +53,170 @@ Then to re-start the app.
 
 ## 2.1 privileges
 
-> Task: prescription modify privilege
+> Task: Prescription Modify
 
 can add a medication, can group medications to print them in a prescription
 
-idea: that is a doctor
+idea: that is a doctor, who can write a prescription
 
 =======
 
-> Task: prescription view privilege
+> Task: Prescription View
 
 can see the 'download link' of a prescription (i.e. the pdf is created on the fly)
 
-idea: that is a receptionist who has additionally this privilege
+idea: that is a reception clerk who additionally prints paper prescriptions out
 
 =======
 
-## 2.2 example: add privileges to existing roles - please note!
+## 2.2 example: add new roles, with those privileges - please note!
 
-!! Please note: after stop/restarting the server, those changes (of the own created privileges, and of the built-in privilege - patient-summary - are reset/withdrawn/not there any more, and must be set, again. 
+! Please note: the in-built roles of e.g. 'doctor' - are changeable, however, they are reset after re-start of the server. 
+That is why, for additional privileges, 'new' roles have to be created.
+
 
 in: Admin view - Users - manage roles
 
-find:
+Add Role:
 
-> Role: Registration clerk
+> Role: 'Doctor and prescription'
 
-add privilege:
+---
 
-> Task: Prescription view privilege
+a/ Here, 'copy' all _Inherited Roles_ from the in-built role 'Organizational: Doctor'
 
-add inherited roles:
+
+Inherited Roles:
+
+> Application: Enters ADT Events // right column
+
+> Application: Records Allergies // left column
+
+> Application: Requests Appointments // left
+
+> Application: Sees Appointment Schedule // right
+
+> Application: Uses Patient Summary // right
+
+> Application: Writes Clinical Notes
+
+Please scroll down the page entirely, button: 'save role'
+
+(By saving these inherited roles, the corresponding privileges are also set - blue background).
+
+---
+
+b/ Add the additional privileges:
+
+
+Privileges:
+
+(Please find those 2, and 'click' onto them:)
+
+> Task: Prescription Modify
+
+> Task: Prescription View
+
+
+Please scroll down the page entirely, button: 'save role'
+
+=====
+
+---
+in: Admin view - Users - manage roles
+
+Add Role:
+
+> Role: 'Registration clerk and prescription'
+
+
+---
+a/ Here, 'copy' all _Inherited Roles_ from the in-built role 'Organizational: Registration Clerk'
+
+
+Inherited Roles:
+
+> Application: Registers Patients // right column
+
+> Application: Schedules Appointments // left column
+
+> Application: Sees Appointment Schedule // right column
+
+> Provider // right column
+
+
+Please scroll down the page entirely, button: 'save role'
+
+(By saving these inherited roles, the corresponding privileges are also set - blue background).
+
+---
+
+b/ Add one additional privilege:
+
+
+Privileges:
+
+(Please find it, and 'click' onto it:)
+
+> Task: Prescription View
+
+---
+
+c/ Add one additional role:
+
+Inherited Roles: // top of page
 
 > Application: Uses Patient Summary
 
 (Uses Patient Summary: to see the patient dashboard)
 
------------
 
-find:
 
-> Role: Doctor
+Please scroll down the page entirely, button: 'save role'
 
-add privileges:
-
-> Task: prescription modify privilege
-
-> Task: prescription view privilege
-
-(needs provider)
-
------------
+---
+==============
 
 ## 2.3 example: add users with those privileges
 
 in: Admin view - Users - manage users
 
-add:
 
-> User: Receptionist1, Password1
+add: (create a new person)
+Please note: this person needs to be a 'provider' to "register a patient"
 
-set
+> User: Username: Receptionist1, Password: Password1
 
-> Role: Registration clerk
 
-add:
+Provider account: 
 
-> provider
+> Create a Provider account for this user // provider here
 
------------
-add:
 
-> User: Doctor1, Password1
+Roles
+
+> Registration clerk and prescription
+
+> Provider // provider here also
+
+
+Please scroll down the page entirely, button: 'save user'
+
+
+---
+=======
+
+in: Admin view - Users - manage users
+
+
+add: (create a new person)
+
+> User: Username: Doctor1, Password1
 
 set 
 
-> Role: Doctor
+> Role: Doctor and prescription
+
+
+Please scroll down the page entirely, button: 'save user'
 
