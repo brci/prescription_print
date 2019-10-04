@@ -305,3 +305,11 @@ Those lines that are marked with 'print' are added to a prescription. With 'prin
     <img src="prescription4.png" /> 
 </div>
 
+
+==============
+
+# 6. Pdf print library
+
+The library com.lowagie is used, instead of iText. com.lowagie is subject to the MPL/LGPL. The versions after 2.1.7 were renamed to itext, and, the licence was changed to the Affero General Public License v3/AGPL. Since com.lowagie supported our needs, we continued to use this library v. 2.1.7.
+
+
