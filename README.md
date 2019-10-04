@@ -271,6 +271,31 @@ d/ compile, like described in the mentioned link and refer to this extra setting
 
 The resulting module, then, is created in /omod/target/prescription….omod
 
+==============
 
+# 5. Screenshots
 
+After adding the module: (the link in blue appears when a prescription was created)
+
+<div align="center">
+    <img src="prescription1.png" /> 
+</div>
+
+'Click' onto the 'pen', a prescription resp. medications to prescribe can be added. The available medications are taken from a file.csv, a simple list. Please see the explanation therefore, and how to change that list, above.
+
+<div align="center">
+    <img src="prescription2.png" /> 
+</div>
+
+Those lines that are marked with 'print' are added to a prescription. With 'print' those lines are stored as part of a prescription, and a link (please see the 1st image) is shown
+
+<div align="center">
+    <img src="prescription3.png" /> 
+</div>
+
+'Click' onto the link opens a pdf-preview of the 'prescription'. The data at the top, the clinic etc. are configurable, please see an explanation above.
+
+<div align="center">
+    <img src="prescription4.png" /> 
+</div>
 
