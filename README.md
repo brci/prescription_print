@@ -220,3 +220,57 @@ set
 
 Please scroll down the page entirely, button: 'save user'
 
+---
+==============
+
+# 3. Usage
+
+The .omod file provided within this repository can be used 'as is'. 
+
+## 3.1 The application itself
+
+a/ Using e.g. the standalone application 
+
+> git clone -b openmrs-emr2 --single-branch https://github.com/openmrs/openmrs-standalone --single-branch
+
+and following the instructions in https://github.com/openmrs/openmrs-standalone to start it
+
+b/ then to stop the application, find the file 'openmrs-standalone-runtime.properties' - that file was created by the application,
+
+and please to add 3 lines like described above, in 1.2
+
+c/ Download the .omod file from this git,  - add it via the admin-view as a module.
+
+
+==============
+
+# 4. Compilation
+
+a/ cloning this github repository
+
+b/ check the version number of the parent (= OpenMRS) in pom.xml
+
+
+```
+  <parent>
+        <groupId >org.openmrs.maven.parents</groupId>
+        <artifactId >maven-parent-openmrs-module</artifactId>
+        <version>1.1.1</version>
+  </parent>
+```
+
+Please compare with the version number here https://github.com/openmrs/openmrs-module-basicmodule/blob/master/pom.xml and in case, please adjust the version number
+
+c/ please create a file “settings.xml” (location: e.g. next to the pom.xml)
+
+Please insert into this settings.xml the content, like described here: https://wiki.openmrs.org/display/docs/Using+the+Module+Maven+Archetype
+
+d/ compile, like described in the mentioned link and refer to this extra settings.xml file // e.g. with settings.xml in the same location like the pom.xml:
+
+> mvn package -s settings.xml
+
+The resulting module, then, is created in /omod/target/prescription….omod
+
+
+
+
